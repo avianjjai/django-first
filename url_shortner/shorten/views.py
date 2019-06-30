@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 from .models import bitly
@@ -7,7 +8,6 @@ from .forms import bitlyForm,editBitly
 
 def index(request):
     objects = bitly.objects.all()
-    print(objects)
     context = {'objs':objects}
     return render(request,'index.html',context)
 
@@ -21,7 +21,7 @@ def create(request):
         instance.datewise = json.dumps({})
         instance.save()
 
-        return HttpResponseRedirect("http://127.0.0.1:8000/home/")
+        return HttpResponseRedirect(reverse('shorten:index'))
 
     context = {"urlform":form}
     return render(request,"create.html",context)
@@ -46,7 +46,7 @@ def update(request,pk = None):
     form = editBitly(request.POST or None, instance=qs)
     if form.is_valid():
         form.save()
-        return HttpResponseRedirect("http://127.0.0.1:8000/home")
+        return HttpResponseRedirect(reverse('shorten:index'))
 
     context = {'urlform':form}
     return render(request,"create.html",context)
@@ -54,4 +54,4 @@ def update(request,pk = None):
 def delete(request,pk = None):
     qs = get_object_or_404(bitly,id = pk)
     qs.delete()
-    return HttpResponseRedirect("http://127.0.0.1:8000/home")
+    return HttpResponseRedirect(reverse('shorten:index'))
