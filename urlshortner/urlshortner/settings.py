@@ -128,3 +128,6 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 LOGIN_URL = 'short/signin/'
+
+
+STATIC_ROOT = STATIC_DIR
