@@ -22,6 +22,5 @@ from django.contrib.staticfiles.urls import static,staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('short/',include('short.urls')),
-    #path('',views.signup,name ='index'),
+    path('',include('short.urls')),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,)+staticfiles_urlpatterns()
