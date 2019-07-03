@@ -24,4 +24,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('short/',include('short.urls')),
     #path('',views.signup,name ='index'),
-]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT,)+staticfiles_urlpatterns()
