@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/page2.css">
+    </head>
+    <body>
+        <div id="detail">
+            <div id="detailcontentdate"><span style="position:relative;top:20%;">CREATED {{ shortcode.created_date }} | {{ request.user.username }}</span></div>
+            <div id="detailcontenttitle"><span style="position:relative;top:15%;">{{ shortcode.title }}</span></div>
+            <div id="detailcontentlongurl"><span style="position:relative;top:20%;">{{ shortcode.long_url }}</span></div>
+            <div id="detailcontentshorturl">
+                <div id="detailcontentshorturlname"><span style="position:relative;top:20%;">{{ request.get_host }}/short/{{ shortcode.shortcode }}</span></div>
+                <a href=""><div class="detailcontentshorturlbutton"><span style="position:relative;top:20%;" onclick ="copy('{{ request.get_host }}/short/{{ shortcode.shortcode }}')">COPY</span></div></a>
+                <a href=""><div class="detailcontentshorturlbutton"><span style="position:relative;top:20%;">SHARE</span></div></a>
+                <a href="{% url 'short:delete' shortcode.id %}" target="_top"><div class="detailcontentshorturlbutton"><span style="position:relative;top:20%;">DELETE</span></div></a>
+            </div>
+            <div id ="line"></div>
+        </div>
+    </body>
+</html>
+
+
+
+<script>
+
+    function copy(str)
+    {
+        var el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy')
+        document.body.removeChild(el);
+        window.alert('copied:'+str);
+    }
+
+</script>

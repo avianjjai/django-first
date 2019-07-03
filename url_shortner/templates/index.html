@@ -1,0 +1,260 @@
+<html>
+    <head>
+            <link rel="stylesheet" type="text/css" href="/static/urlshortner.css">
+    </head>
+    <body id="body">
+        <form method = "POST" action="{% url 'short:shorturl' %}">{% csrf_token %}
+                <div id="sorturl">
+                <div id="header"></div>
+                <div id="content">
+                    <div id="contentC1"></div>
+                    <div id="contentC2">
+                        <div id="logo_outer">
+                            <div id="logoleft"></div>
+                            <div id="logocenter"><img src="/media/Logo.png" style="height: 100%;width: 100%;"></img></div>
+                            <div id="logoright"></div>
+                        </div>
+                        <div class="content2Rows"></div>                    
+                        <div class="content2Rows" style="text-align: center;">Enter Long URL</div>
+                        <div class="content2Rows" style="text-align: center;">
+                            <input type="text" name=long_url placeholder="Long URL" style="position:relative;top:20%;width:90%;height: 100%;" required>
+                        </div>
+                        <div class="content2Rows"></div>  
+                        <div class="content2Rows" style="text-align: center;">
+                            <input id="button1" type="submit" value="Sort Me" style="position:relative;width:40%; top:30%;height:80%;">
+                        </div>
+                        <div class="content2Rows" style="text-align: center;">
+                            <input id="button1" type="reset" value="Cancel" style="position:relative;width:40%; top:30%;height:80%;" onclick="closesorturl()">
+                        </div>
+                    </div>
+                    <div id="contentC3"></div>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </form>
+
+
+        
+
+
+        <form method = "POST" action="{% url 'short:signin' %}">{% csrf_token %}
+            <div id="signin">
+                <div id="header"></div>
+                <div id="content">
+                    <div id="contentC1"></div>
+                    <div id="contentC2">
+                        <div id="logo_outer">
+                            <div id="logoleft"></div>
+                            <div id="logocenter"><img src="/media/Logo.png" style="height: 100%;width: 100%;"></img></div>
+                            <div id="logoright"></div>
+                        </div>
+                        <div class="content2Rows"></div>                    
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="Email"><span style="position:relative;top:30%;">Email Address</span></label></spam></div>
+                            <div class="entries"><input type="email" name=email placeholder="Email Id" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="password"><span style="position:relative;top:30%;">Password</span></label></spam></div>
+                            <div class="entries"><input type="password" name=password placeholder="Password" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows"></div>  
+                        <div class="content2Rows">
+                            <div class="label" ><input id="button1" type="submit" value="Submit" style="position:relative;width:40%; top:30%;height:60%;left: 8%;"></div>
+                            <div class="entries">
+                                <input id="button1" type="reset" value="Reset" style="position:relative;width:40%; top:30%;height:60%;left: -13%;">
+                                <input id="button1" type="reset" value="Exit" style="position:relative;width:40%; top:30%;height:60%;left: 5%;" onclick="closesignin()">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contentC3"></div>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </form>
+
+
+        <form method = "POST" action="{% url 'short:signup' %}">{% csrf_token %}
+            <div id="signup">
+                <div id="header"></div>
+                <div id="content">
+                    <div id="contentC1"></div>
+                    <div id="contentC2">
+                        <div id="logo_outer">
+                            <div id="logoleft"></div>
+                            <div id="logocenter"><img src="/media/Logo.png" style="height: 100%;width: 100%;"></img></div>
+                            <div id="logoright"></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="firstname"><span style="position:relative;top:30%;">Full Name</span></label></spam></div>
+                            <div class="entries"><input type="text" name=full_name placeholder="Full Name" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="Email"><span style="position:relative;top:30%;">Email Address</span></label></spam></div>
+                            <div class="entries"><input type="email" name=email placeholder="Email Id" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="mobile"><span style="position:relative;top:30%;">Mobile No.</span></label></spam></div>
+                            <div class="entries"><input type="tel" name=mobile placeholder="Mobile No." style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="password"><span style="position:relative;top:30%;">Password</span></label></spam></div>
+                            <div class="entries"><input type="password" name=password placeholder="Password" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label"><spam class="label_property"><label for="conPassword"><span style="position:relative;top:30%;">Confirm Password</span></label></spam></div>
+                            <div class="entries"><input type="password" name=con_password placeholder="Password" style="position:relative;top:20%;width:90%;height: 50%;" required></div>
+                        </div>
+                        <div class="content2Rows">
+                            <div class="label" ><input id="button1" type="submit" value="Submit" style="position:relative;width:40%; top:30%;height:60%;left: 8%;"></div>
+                            <div class="entries">
+                                <input id="button1" type="reset" value="Reset" style="position:relative;width:40%; top:30%;height:60%;left: -13%;">
+                                <input id="button1" type="reset" value="Exit" style="position:relative;width:40%; top:30%;height:60%;left: 5%;" onclick="closesignup()">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contentC3"></div>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </form>
+
+
+        <div id = "mySidenav" class="sidenav">
+            <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+            {% if not request.user.is_authenticated %}
+            <span onclick="opensignup()">New User</span>
+            <span onclick="opensignin()">Sign In</span>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <a href="">Edit Profile</a>
+            <a href="">Settings</a>
+            <a href="{% url 'short:logout' %}">Logout</a>
+            {% endif %}
+        </div>
+        <div id ="top">
+            <div id ="topR1">
+                <div id ="topR1logo"><img src="/media/Logo.png" style="width:100%;height:100%;"></div>
+                <div id ="topR1tagname"><spam style="width:100%;height:100%;">AVIANJJAI</spam></div>
+                <div id ="topR1search"><input id = "topR1searchinput" type="test" name="search" placeholder="Search"></div>
+                <div id ="topR1create">
+                    <div id="topR1createC1"><span style="position: relative;top:25%;" onclick="opensorturl()">CREATE</span></div>
+                    <div class="dropdown">
+                        <div class="dropdown-content">
+                            <a onclick="opensorturl()">Short Link</a>
+                            <a href="#">Campaign</a>
+                        </div>
+                    </div>
+                </div>
+                <div id ="topR1username"><span style="position: relative;top:25%;" >{{ request.user.username }}</span></div>
+                <div id ="topR1menu"><img src="/media/menu.png" onclick="openNav()" style="width:100%;height:100%;"></div>
+                <script>
+                    function closesorturl() 
+                    {
+                        document.getElementById("sorturl").style.width = "0%";
+                        document.getElementById("sorturl").style.height = "0%"; 
+                    }
+                    function opensorturl() 
+                    {
+                       
+                        document.getElementById("sorturl").style.width = "100%";
+                        document.getElementById("sorturl").style.height = "100%";
+                    }
+                    
+                    function closesignin() 
+                    {
+                        document.getElementById("signin").style.width = "0%";
+                        document.getElementById("signin").style.height = "0%";
+                    }
+                    function opensignin() 
+                    {
+                        document.getElementById("signin").style.width = "100%";
+                        document.getElementById("signin").style.height = "100%";
+                        document.getElementById("mySidenav").style.width = "0%";
+                    }
+                    
+                    
+                    function closesignup() 
+                    {
+                        document.getElementById("signup").style.width = "0%";
+                        document.getElementById("signup").style.height = "0%";
+                    }
+                    function opensignup() 
+                    {
+                        document.getElementById("signup").style.width = "100%";
+                        document.getElementById("signup").style.height = "100%";
+                        document.getElementById("mySidenav").style.width = "0%";
+                    }
+                    
+                    function openNav() 
+                    {
+                        document.getElementById("mySidenav").style.width = "20%";
+                    }
+                        
+                    function closeNav() 
+                    {
+                        document.getElementById("mySidenav").style.width = "0%";
+                    }
+
+                </script>
+            </div>
+        </div>
+        <div id ="middle">
+            <div id ="middleC1">
+                <div id ="middleC1R1">
+                    <div id ="middleC1R1Logo"><img src="/media/click.png" style="width:100%;height:100%;"></div>
+                    <div id ="middleC1R1Content">
+                        <div id ="middleC1R1ContentR1">{{ total_clicks }}</div>
+                        <div id ="middleC1R1ContentR2">TOTAL CLICKS</div>
+                        <div id ="middleC1R1ContentR3"></div>
+                    </div>
+                </div>
+                <div id ="middleC1R2">
+                    <div id ="middleC1R1Logo"><img src="/media/email.png" style="width:100%;height:100%;"></div>
+                    <div id ="middleC1R1Content">
+                        <div id ="middleC1R1ContentR1">1</div>
+                        <div id ="middleC1R1ContentR2">Email,SMS,Direct</div>
+                        <div id ="middleC1R1ContentR3">TOP REFERRER</div>
+                    </div>
+                </div>
+                <div id ="middleC1R3">
+                    <div id ="middleC1R1Logo"><img src="/media/location.png" style="width:100%;height:100%;"></div>
+                    <div id ="middleC1R1Content">
+                        <div id ="middleC1R1ContentR1">1</div>
+                        <div id ="middleC1R1ContentR2">India</div>
+                        <div id ="middleC1R1ContentR3">TOP LOCATION</div>
+                    </div>
+                </div>
+            </div>
+            <div id ="middleC2"></div>
+        </div>
+        <div id ="bottom">
+            <div id ="bottomC1">
+                <div id ="bottomC1R1">
+                        <div class ="bottomC1R1C1"><span style="position: relative;top:25%;">{{ len }} Links</span></div>
+                        <div class ="bottomC1R1C2"><span style="position: relative;top:25%;">Clicks</span></div>
+                </div>
+                <div class ="bottomC1content">
+                    {% for shortcode in shortcodes %}
+                        <div class ="bottomC1contentdate">
+                            <div class ="bottomC1R1C1">{{ shortcode.created_date }}</div>
+                        </div>
+                        <div class ="bottomC1contenttitle">
+                            <div class ="bottomC1R1C1"><a href="{% url 'short:detail' shortcode.id %}" target = "abc" style = "text-decoration: none;color:  #464c50;">{{ shortcode.title|slice:":40" }} .....</a></div>
+                        </div>
+                        <div class ="bottomC1contentlink">
+                            <div class ="bottomC1contentlinkC1">
+                                <a href="{% url 'short:redirect' shortcode.shortcode %}" style = "text-decoration: none;color: #ee6123;position: relative;top:25%;">{{ request.get_host }}/short/{{ shortcode.shortcode }}</a>
+                            </div>
+                            <div class ="bottomC1contentlinkC2"><span style="position: relative;top:25%;">{{ clicks|get_item:shortcode }} Clicks</span></div>
+                        </div>
+                        <div id ="line"></div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+            <div id ="bottomC2">
+                <iframe name ="abc"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
